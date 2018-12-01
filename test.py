@@ -7,7 +7,7 @@ connection = client.connect()
 
 print(connection)
 
-value = client.read_input_register(48, 2, unit=0x01)
+value = client.read_input_registers(48, 2, unit=0x01)
 
 print(value)
 print(value.register)
