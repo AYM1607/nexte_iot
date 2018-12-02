@@ -9,6 +9,6 @@ instrument.serial.timeout = 3
 
 # print(instrument)
 
-voltage = instrument.read_float(96, functioncode=3, numberOfRegisters=2)
+voltage = instrument.read_float(96, 3, 2)
 
 print(voltage)

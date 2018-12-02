@@ -26,7 +26,7 @@ def addDevice(address):
 
 def readFloat(registerAddress, deviceAddress):
     device = devices[deviceAddress]
-    return device.readFloat(registerAddress, 3, 2)
+    return device.read_float(registerAddress, 3, 2)
 
 
 def getData(address):
