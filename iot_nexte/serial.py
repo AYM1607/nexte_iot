@@ -23,5 +23,17 @@ def addDevice(address):
 
     devices[address] = newInst
 
-def readRegister():
 
+def readFloat(registerAddress, deviceAddress):
+    device = devices[deviceAddress]
+    return device.readFloat(registerAddress, 3, 2)
+
+
+def getData(address):
+    data = {}
+    data['kw'] = readFloat(ACTIVE_POWER, address)/1000
+    data['pf'] = readFloat(POWER_FACTOR, address)
+    data['kwh'] = readFloat(TOTAL_ACTIVE_ENERGY, address)
+    data['kvarh'] = readFloat(TOTAL_REACTIVE_ENERGY, address)
+    return data
+    
