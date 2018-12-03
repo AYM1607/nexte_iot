@@ -35,5 +35,4 @@ def getData(address):
     data['pf'] = readFloat(POWER_FACTOR, address)
     data['kwh'] = readFloat(TOTAL_ACTIVE_ENERGY, address)
     data['kvarh'] = readFloat(TOTAL_REACTIVE_ENERGY, address)
-    return data
-    
+    return data    
