@@ -1,5 +1,6 @@
 import minimalmodbus
 import serial
+from . import storage2 as storage
 
 # Communication constants
 BAUD_RATE = 4800
@@ -12,7 +13,15 @@ POWER_FACTOR = 96
 TOTAL_ACTIVE_ENERGY = 128
 TOTAL_REACTIVE_ENERGY = 134
 
+# File name for past data
+FILE_NAME = 'past.data'
+
 devices = {}
+pastData = None
+
+
+def getPastData():
+    pastData = storage.loadData(FILE_NAME)
 
 
 def addDevice(address):
@@ -35,4 +44,7 @@ def getData(address):
     data['pf'] = readFloat(POWER_FACTOR, address)
     data['kwh'] = readFloat(TOTAL_ACTIVE_ENERGY, address)
     data['kvarh'] = readFloat(TOTAL_REACTIVE_ENERGY, address)
-    return data    
+    return data
+
+
+getPastData()
