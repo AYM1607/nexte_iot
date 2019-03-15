@@ -1,6 +1,6 @@
 import requests
 
-url = 'http://13.52.96.154/readings'
+url = 'http://api.next-e.mx/readings'
 
 
 def sendMeterData(meterId, payload):
